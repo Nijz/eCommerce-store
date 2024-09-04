@@ -33,7 +33,7 @@ const NavItem = ({isAnyOpen, category, handleOpen, isOpen}: NavItemProps) => {
             {
                 isOpen ? (
                     <div className={cn("absolute inset-x-0 top-full text-muted-foreground text-sm ",{
-                        "animate-in slide-in-from-top-5 fade-in-10" : !isAnyOpen
+                        "animate-in slide-in-from-top-10 fade-in-50 transition-all duration-700" : isAnyOpen
                     })}>
                         <div className=" absolute inset-0 top-1/2 bg-white shadow" aria-hidden='true' />
                         <div className=" relative bg-white">
@@ -46,7 +46,7 @@ const NavItem = ({isAnyOpen, category, handleOpen, isOpen}: NavItemProps) => {
                                                     key={item.name}
                                                     className="group relative text-base sm:text-sm"
                                                 >
-                                                    <div className="relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                                                    <div className="relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75 transition-all duration-200 cursor-pointer">
                                                         <Image src={item.imageSrc} alt="Navitem" fill className="object-cover object-center"/>
                                                     </div>
 
@@ -58,7 +58,7 @@ const NavItem = ({isAnyOpen, category, handleOpen, isOpen}: NavItemProps) => {
                                                     </p>
 
                                                     {/* yt timestamp 1:15  */}
-
+                                                    
                                                 </div>
                                             ))
                                         }
